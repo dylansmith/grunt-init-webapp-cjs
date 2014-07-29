@@ -1,6 +1,6 @@
 {
   "name": "grunt-init-webapp-cjs",
-  "description": "grunt-init template for scaffolding a project for browser-based development",
+  "description": "grunt-init template for scaffolding a CommonJS project for browser-based development",
   "repository": {
     "type": "git",
     "url": "https://github.com/dylansmith/grunt-init-webapp-cjs"
