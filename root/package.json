@@ -1,0 +1,96 @@
+{
+  "name": "grunt-init-webapp-cjs",
+  "description": "grunt-init template for scaffolding a project for browser-based development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dylansmith/grunt-init-webapp-cjs"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "browserify": "^4.2.3",
+    "browserify-shim": "^3.6.0",
+    "debowerify": "^0.8.1",
+    "grunt": "~0.4.2",
+    "grunt-autoprefixer": "^0.8.1",
+    "grunt-browserify": "^2.1.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.7.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.1",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.0",
+    "grunt-docco": "^0.3.3",
+    "grunt-istanbul": "^0.3.0",
+    "grunt-jsdoc": "^0.5.6",
+    "grunt-karma": "^0.8.3",
+    "grunt-newer": "~0.7.0",
+    "grunt-plato": "^1.1.0",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^2.0.0",
+    "jquery": "^2.1.1",
+    "jshint-stylish": "~0.1.5",
+    "karma": "^0.12.16",
+    "karma-browserifast": "^0.6.1",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.4",
+    "karma-expect": "^1.1.0",
+    "karma-mocha": "^0.1.4",
+    "karma-mocha-reporter": "^0.2.6",
+    "karma-nyan-reporter": "0.0.43",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-sinon-chai": "^0.2.0",
+    "load-grunt-config": "^0.12.0",
+    "load-grunt-tasks": "~0.4.0",
+    "lodash": "^2.4.1",
+    "mocha": "*",
+    "should": "*",
+    "time-grunt": "~0.3.1",
+    "underscore": "^1.6.0"
+  },
+  "main": "src/js/app.js",
+  "browser": {
+    "backbone": "./bower_components/backbone/backbone.js",
+    "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js",
+    "jquery": "./bower_components/jquery/dist/jquery.js",
+    "lodash": "./bower_components/lodash/dist/lodash.js",
+    "modernizr": "./bower_components/modernizr/modernizr.js",
+    "underscore": "./bower_components/underscore/underscore.js"
+  },
+  "browserify": {
+    "transform": [
+      "hbsfy",
+      "debowerify",
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "underscore": "_",
+    "jquery": "$",
+    "modernizr": {
+      "exports": "modernizr",
+      "depends": [
+        "jquery"
+      ]
+    },
+    "bootstrap": {
+      "exports": "bootstrap",
+      "depends": [
+        "jquery"
+      ]
+    },
+    "backbone": {
+      "exports": "Backbone",
+      "depends": [
+        "jquery:$",
+        "underscore:_"
+      ]
+    }
+  }
+}
